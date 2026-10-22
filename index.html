@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT SCORE COM SERVICES | Modern Technology & Infrastructure Solutions</title>
+  <style>
+    /* --- COLOR PALETTE & VARIABLES --- */
+    :root {
+      --primary: #1e293b;       /* Dark slate blue */
+      --secondary: #0f766e;     /* Deep teal */
+      --accent: #06b6d4;        /* Electric cyan */
+      --highlight: #f59e0b;     /* Warm amber */
+      --whatsapp: #25d366;      /* WhatsApp Green */
+      --bg-light: #f8fafc;      /* Soft light background */
+      --text-dark: #334155;     /* Reader-friendly dark gray */
+      --text-muted: #64748b;    /* Subdued gray */
+      --white: #ffffff;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 12px;
+    }
+
+    /* --- BASE STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- HEADER & NAVIGATION --- */
+    header {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      fill: var(--accent);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--white);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(6, 182, 212, 0.6);
+    }
+
+    /* --- WHATSAPP BUTTON STYLES --- */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--whatsapp);
+      color: var(--white);
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      background-color: #1eb856;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--whatsapp);
+      color: var(--white);
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1eb856;
+    }
+
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+      fill: var(--white);
+    }
+
+    /* --- CONTAINERS & SECTIONS --- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* --- SERVICES SECTION --- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease, border-top 0.3s ease;
+      border-top: 4px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-top: 4px solid var(--accent);
+    }
+
+    .icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* --- ABOUT & STATS SECTION --- */
+    .about-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* --- CONTACT SECTION --- */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--text-dark);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+    }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 768px) {
+      .about-box,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/+256-742-691-501?text=Hello%20IT%20SCORE%20COM%20SERVICES,%20I%20have%20an%20inquiry." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- HEADER NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-wrapper">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <div class="logo">IT SCORE <span>COM</span></div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Reliable & Smart <span>IT Solutions</span> For Your Organization</h1>
+      <p>Empowering businesses, schools, and institutions with secure network management, systems administration, asset tracking, and modern infrastructure.</p>
+      <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="container">
+    <div class="section-title">
+      <h2>Our Core Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Systems & Asset Management</h3>
+        <p>Complete deployment and tracking of IT hardware, inventory auditing, remote administration, and proactive system maintenance.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>Network Security & Firewalling</h3>
+        <p>Robust network architecture setup, secure router configurations, firewall defense, and continuous threat monitoring.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Remote Support & Helpdesk</h3>
+        <p>Fast, efficient remote troubleshooting and technical support ensuring maximum uptime for your operational workflow.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>Open-Source Infrastructure</h3>
+        <p>Cost-effective implementation of reliable open-source platforms customized precisely to your institutional requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="container">
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="about-box">
+      <div>
+        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">Delivering Excellence in Technology</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-muted);">At <strong>IT SCORE COM SERVICES</strong>, we specialize in building, maintaining, and securing digital environments. Whether managing enterprise networks or handling educational IT ecosystems, we provide practical, modern, and high-performance solutions.</p>
+        <p style="color: var(--text-muted);">Our mission is to maximize uptime, protect critical data, and implement accessible technology tailored to your specific organizational goals.</p>
+      </div>
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">System Uptime</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Technical Readiness</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Secure Workflows</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Fast</div>
+          <div class="stat-label">Issue Resolution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container">
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Have questions or need technical advice? Reach out to our team today.</p>
+        <div class="contact-detail">
+          <span>📧</span> <strong>Email:</strong> info@itscorecom.com
+        </div>
+        <div class="contact-detail">
+          <span>📞</span> <strong>Phone:</strong> +123 456 7890
+        </div>
+        <div class="contact-detail">
+          <span>📍</span> <strong>Location:</strong> Information Technology Dept.
+        </div>
+        
+        <!-- Direct WhatsApp Chat Button in Contact Info -->
+        <a href="https://wa.me/1234567890?text=Hello%20IT%20SCORE%20COM%20SERVICES,%20I%20have%20an%20inquiry." class="btn-whatsapp" target="_blank">
+          <svg class="whatsapp-icon" style="width:20px; height:20px;" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email Address" required>
+        </div>
+        <div class="form-group">
+          <textarea rows="4" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 IT SCORE COM SERVICES. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
